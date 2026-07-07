@@ -35,9 +35,7 @@ const questions = [
     key: "benefits",
     answers: ["Yes, full benefits", "Limited benefits", "No benefits", "Looking for options"]
   },
-  {
-    type: "gift"
-  },
+  { type: "gift" },
   {
     question: "Which benefit do you believe your team would value most?",
     key: "valuedBenefit",
@@ -92,8 +90,8 @@ function renderQuestion() {
         <p class="eyebrow">Business Appreciation Gift</p>
         <h2>You're halfway there.</h2>
         <p>
-          Complete your Employee Benefits Advantage Score™ and we'll send you a complimentary
-          $50 dining certificate to one of our participating restaurant partners.
+          Complete your Employee Benefits Assessment™ and we'll send you a complimentary
+          Business Appreciation Gift that includes a dining voucher from one of our participating restaurant partners.
         </p>
         <button class="primary-btn" onclick="nextQuestion()">Continue My Assessment</button>
       </div>
@@ -102,7 +100,7 @@ function renderQuestion() {
   }
 
   screen.innerHTML = `
-    <p class="eyebrow">Building Your Benefits Score</p>
+    <p class="eyebrow">Building Your Assessment</p>
     <h2>${item.question}</h2>
     <div class="answers">
       ${item.answers.map(answer => `
@@ -130,40 +128,33 @@ function nextQuestion() {
   }
 }
 
-function calculateScore() {
-  let score = 62;
-
-  if (responses.employees !== "Just me") score += 8;
-  if (responses.benefits === "No benefits" || responses.benefits === "Limited benefits") score += 8;
-  if (responses.hiring === "Very difficult" || responses.retention === "Very difficult") score += 8;
-  if (responses.interest === "Yes") score += 10;
-  if (responses.timeline === "Immediately" || responses.timeline === "Within 30 days") score += 4;
-
-  return Math.min(score, 96);
-}
-
 function renderLeadForm() {
   progressFill.style.width = "100%";
   progressText.textContent = "Assessment Complete";
   stepText.textContent = "Final Step";
 
-  const score = calculateScore();
-
   screen.innerHTML = `
     <p class="eyebrow">Assessment Complete</p>
-    <h2>Your Employee Benefits Advantage Score™ is ready.</h2>
-    <div class="score">${score}/100</div>
+
+    <h2>Your Employee Benefits Assessment™ has been completed.</h2>
+
     <p>
-      Enter your information below and we'll send your assessment results and your complimentary
-      dining certificate details.
+      Based on your answers, we've identified opportunities that may help improve employee recruitment, retention and overall employee satisfaction.
+    </p>
+
+    <p>
+      Complete the information below to receive your personalized assessment results and your Business Appreciation Gift.
     </p>
 
     <div class="form-grid">
-      <input id="name" placeholder="Your Name" />
-      <input id="business" placeholder="Business Name" />
-      <input id="email" placeholder="Email Address" />
-      <input id="phone" placeholder="Mobile Phone" />
-      <button class="primary-btn" onclick="finishAssessment()">Send My Results</button>
+      <input id="name" placeholder="Your Name">
+      <input id="business" placeholder="Business Name">
+      <input id="email" placeholder="Email Address">
+      <input id="phone" placeholder="Mobile Number">
+
+      <button class="primary-btn" onclick="finishAssessment()">
+        Send My Assessment
+      </button>
     </div>
   `;
 }
@@ -179,23 +170,6 @@ function finishAssessment() {
     return;
   }
 
-  screen.innerHTML = `
-    <p class="eyebrow">Thank You, ${name}</p>
-    <h2>Your results have been recorded.</h2>
-    <p>
-      Your dining certificate details will be sent to the email address provided.
-      Based on your answers, your business may be a strong fit for an affordable employee healthcare benefit option.
-    </p>
-
-    <a class="primary-btn" href="https://b.12stoneboost.com/widget/booking/b34LtANWuxqJtjdPlRdA">
-      Schedule My Free 15-Minute Review
-    </a>
-
-    <p class="note">
-      Replace this button link with your calendar link.
-    </p>
-  `;
-
   console.log("Lead Responses:", {
     name,
     business,
@@ -203,4 +177,24 @@ function finishAssessment() {
     phone,
     responses
   });
+
+  alert("Thank you! Your assessment has been received. We will email your personalized results and Business Appreciation Gift shortly.");
+
+  screen.innerHTML = `
+    <p class="eyebrow">Thank You, ${name}</p>
+
+    <h2>Your assessment has been received.</h2>
+
+    <p>
+      We’ll use your responses to prepare your personalized Employee Benefits Assessment results and Business Appreciation Gift details.
+    </p>
+
+    <p>
+      If you would like to review your options now, schedule a complimentary 15-minute benefits review below.
+    </p>
+
+    <a class="primary-btn" href="https://b.12stoneboost.com/widget/booking/b34LtANWuxqJtjdPlRdA">
+      Schedule My Free 15-Minute Review
+    </a>
+  `;
 }
