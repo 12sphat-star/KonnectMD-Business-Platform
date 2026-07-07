@@ -1,0 +1,373 @@
+:root {
+  --navy: #061b3a;
+  --blue: #1677ff;
+  --teal: #14b8a6;
+  --orange: #ff7a32;
+  --green: #22c55e;
+  --white: #ffffff;
+  --muted: #64748b;
+  --light: #f4f9ff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top left,rgba(20,184,166,.25),transparent 30%),
+    radial-gradient(circle at bottom right,rgba(255,122,50,.18),transparent 30%),
+    linear-gradient(135deg,#eef7ff,#ffffff);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+
+    color:var(--navy);
+}
+
+.app{
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.assessment-card{
+
+    width:100%;
+    max-width:980px;
+
+    background:rgba(255,255,255,.95);
+
+    border-radius:30px;
+
+    padding:40px;
+
+    border:1px solid #dbeafe;
+
+    box-shadow:0 25px 80px rgba(6,27,58,.15);
+
+}
+
+.top-bar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    margin-bottom:30px;
+
+}
+
+.brand{
+
+    color:var(--blue);
+
+    font-weight:800;
+
+    margin-bottom:6px;
+
+}
+
+h1{
+
+    font-size:1.3rem;
+
+}
+
+#stepText{
+
+    background:#eaf5ff;
+
+    color:var(--blue);
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    font-weight:bold;
+
+}
+
+.progress-wrap{
+
+    margin-bottom:35px;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:14px;
+
+    background:#e5e7eb;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+#progressFill{
+
+    width:0;
+
+    height:100%;
+
+    background:linear-gradient(90deg,var(--blue),var(--teal),var(--green));
+
+    transition:.4s;
+
+}
+
+#progressText{
+
+    margin-top:10px;
+
+    color:var(--muted);
+
+    font-weight:bold;
+
+}
+
+.screen{
+
+    animation:fade .4s ease;
+
+}
+
+.eyebrow{
+
+    display:inline-block;
+
+    background:#eaf5ff;
+
+    color:var(--blue);
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+}
+
+h2{
+
+    font-size:clamp(2.2rem,5vw,4rem);
+
+    line-height:1.05;
+
+    margin-bottom:20px;
+
+}
+
+.screen p{
+
+    color:var(--muted);
+
+    font-size:1.15rem;
+
+    margin-bottom:25px;
+
+    max-width:720px;
+
+}
+
+.primary-btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-weight:800;
+
+    font-size:1rem;
+
+    padding:18px 30px;
+
+    border-radius:999px;
+
+    background:linear-gradient(135deg,var(--orange),#ff5b24);
+
+    box-shadow:0 18px 45px rgba(255,91,36,.35);
+
+    transition:.25s;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.note{
+
+    margin-top:18px;
+
+    font-size:.9rem!important;
+
+}
+
+.answers{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+
+}
+
+.answer-card{
+
+    background:white;
+
+    border:2px solid #dbeafe;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.answer-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:var(--blue);
+
+    box-shadow:0 15px 40px rgba(6,27,58,.10);
+
+}
+
+.answer-card strong{
+
+    display:block;
+
+    font-size:1.15rem;
+
+    margin-bottom:8px;
+
+}
+
+.gift-box{
+
+    background:linear-gradient(135deg,#fff8ef,#ffffff);
+
+    border:2px solid #ffd8a8;
+
+    padding:40px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+}
+
+.gift-icon{
+
+    font-size:4rem;
+
+    margin-bottom:15px;
+
+}
+
+.form-grid{
+
+    display:grid;
+
+    gap:15px;
+
+    max-width:600px;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:18px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:14px;
+
+    font-size:1rem;
+
+}
+
+.score{
+
+    font-size:5rem;
+
+    color:var(--blue);
+
+    font-weight:900;
+
+    margin:20px 0;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .assessment-card{
+
+        padding:24px;
+
+    }
+
+    .top-bar{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .answers{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
