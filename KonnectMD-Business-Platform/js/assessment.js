@@ -1,3 +1,5 @@
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzzq-FdfAFl6d7OTKJgpwxcXej2jefRc6_6TGXnKhbbKVavFpj6SxbvhM0tgpoG2XkM/exec";
+
 const questions = [
   {
     question: "Which best describes your business?",
@@ -35,7 +37,9 @@ const questions = [
     key: "benefits",
     answers: ["Yes, full benefits", "Limited benefits", "No benefits", "Looking for options"]
   },
-  { type: "gift" },
+  {
+    type: "gift"
+  },
   {
     question: "Which benefit do you believe your team would value most?",
     key: "valuedBenefit",
@@ -159,7 +163,7 @@ function renderLeadForm() {
   `;
 }
 
-function finishAssessment() {
+async function finishAssessment() {
   const name = document.getElementById("name").value.trim();
   const business = document.getElementById("business").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -170,31 +174,52 @@ function finishAssessment() {
     return;
   }
 
-  console.log("Lead Responses:", {
+  const leadData = {
     name,
     business,
     email,
     phone,
-    responses
-  });
+    industry: responses.industry || "",
+    employees: responses.employees || "",
+    hiring: responses.hiring || "",
+    retention: responses.retention || "",
+    benefits: responses.benefits || "",
+    valuedBenefit: responses.valuedBenefit || "",
+    interest: responses.interest || "",
+    timeline: responses.timeline || "",
+    challenge: responses.challenge || ""
+  };
 
-  alert("Thank you! Your assessment has been received. We will email your personalized results and Business Appreciation Gift shortly.");
+  try {
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify(leadData)
+    });
 
-  screen.innerHTML = `
-    <p class="eyebrow">Thank You, ${name}</p>
+    screen.innerHTML = `
+      <p class="eyebrow">Thank You, ${name}</p>
 
-    <h2>Your assessment has been received.</h2>
+      <h2>Your assessment has been received.</h2>
 
-    <p>
-      We’ll use your responses to prepare your personalized Employee Benefits Assessment results and Business Appreciation Gift details.
-    </p>
+      <p>
+        We’ll use your responses to prepare your personalized Employee Benefits Assessment results and Business Appreciation Gift details.
+      </p>
 
-    <p>
-      If you would like to review your options now, schedule a complimentary 15-minute benefits review below.
-    </p>
+      <p>
+        If you would like to review your options now, schedule a complimentary 15-minute benefits review below.
+      </p>
 
-    <a class="primary-btn" href="https://b.12stoneboost.com/widget/booking/b34LtANWuxqJtjdPlRdA">
-      Schedule My Free 15-Minute Review
-    </a>
-  `;
+      <a class="primary-btn" href="https://b.12stoneboost.com/widget/booking/b34LtANWuxqJtjdPlRdA">
+        Schedule My Free 15-Minute Review
+      </a>
+    `;
+
+  } catch (error) {
+    alert("There was an issue submitting your assessment. Please try again.");
+    console.error("Submission error:", error);
+  }
 }
