@@ -319,7 +319,7 @@ transform:translateY(-8px);
 }
 
 /* SECTIONS */
-.section{padding:88px 0}
+.section{padding:60px 0}
 
 .section-heading{
   max-width:850px;
@@ -631,7 +631,7 @@ transform:translateY(-8px);
   }
 
   .section{
-    padding:64px 0;
+    padding:42px 0;
   }
 
   .gift-box-main,
