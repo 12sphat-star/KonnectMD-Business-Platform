@@ -187,7 +187,7 @@ function finishAssessment() {
       Based on your answers, your business may be a strong fit for an affordable employee healthcare benefit option.
     </p>
 
-    <a class="primary-btn" href="YOUR-CALENDAR-LINK-HERE">
+    <a class="primary-btn" href="https://b.12stoneboost.com/widget/booking/b34LtANWuxqJtjdPlRdA">
       Schedule My Free 15-Minute Review
     </a>
 
