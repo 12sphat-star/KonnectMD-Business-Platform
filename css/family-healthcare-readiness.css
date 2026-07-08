@@ -370,3 +370,92 @@ footer{
 #questionTitle {
   font-size: clamp(1.45rem, 2.4vw, 2.25rem);
 }
+@media(max-width:600px){
+  .survey-header{
+    gap:12px;
+    padding:14px 5%;
+  }
+
+  .brand-mark{
+    width:54px;
+    height:54px;
+    font-size:.78rem;
+    border-radius:14px;
+  }
+
+  .brand-copy strong{
+    font-size:.82rem;
+    line-height:1.2;
+  }
+
+  .brand-copy span{
+    font-size:.72rem;
+  }
+
+  .hero{
+    padding:70px 5% 70px;
+    min-height:auto;
+  }
+
+  h1{
+    font-size:2.55rem;
+    line-height:.98;
+    letter-spacing:-.06em;
+  }
+
+  .hero-subtitle{
+    font-size:1.15rem;
+  }
+
+  .hero-text,
+  .section p{
+    font-size:.98rem;
+  }
+
+  .section{
+    padding:72px 5%;
+  }
+
+  .section h2{
+    font-size:2.15rem;
+    line-height:1.02;
+  }
+
+  .learning-card,
+  .value-card{
+    padding:24px;
+    min-height:auto;
+  }
+
+  .survey-section,
+  .lead-section,
+  .thankyou-section{
+    padding:70px 5%;
+  }
+
+  .survey-card,
+  .lead-card,
+  .thankyou-card{
+    padding:24px;
+    border-radius:24px;
+  }
+
+  #questionTitle{
+    font-size:1.55rem;
+  }
+
+  .answer-option{
+    padding:16px;
+    font-size:.95rem;
+  }
+
+  .primary-btn,
+  .secondary-btn{
+    width:100%;
+    padding:16px 22px;
+  }
+
+  input{
+    padding:16px;
+  }
+}
