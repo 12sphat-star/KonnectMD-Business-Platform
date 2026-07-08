@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 American Family Healthcare Readiness Survey™</title>
+  <link rel="stylesheet" href="css/family-healthcare-readiness.css" />
+</head>
+
+<body>
+
+<header class="survey-header">
+  <div class="brand-mark">AFHRS<br><span>2026</span></div>
+  <div class="brand-copy">
+    <strong>American Family Healthcare Readiness Survey™</strong>
+    <span>Presented by KonnectMD</span>
+  </div>
+</header>
+
+<main class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">National Community Healthcare Initiative</p>
+    <h1>The 2026 American Family Healthcare Readiness Survey™</h1>
+    <p class="hero-subtitle">Understanding the healthcare challenges facing American families.</p>
+    <p class="hero-text">
+      Healthcare is no longer just about insurance. It is about access, affordability,
+      prescription costs, mental wellness, and knowing your family has options when care is needed.
+    </p>
+    <button class="primary-btn" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">
+  See Why We’re Asking
+</button>
+  </div>
+</main>
+
+<section class="section dark" id="why">
+  <div class="section-inner">
+    <p class="eyebrow">Why Your Voice Matters</p>
+    <h2>Families are facing real healthcare pressure.</h2>
+    <p>
+      Rising medical expenses, longer wait times, prescription costs, and limited awareness of
+      available resources are creating new challenges for households across the country.
+    </p>
+  </div>
+</section>
+
+<section class="section cards-section">
+  <div class="section-inner">
+    <p class="eyebrow">What We Are Learning</p>
+    <h2>Six areas that impact family healthcare readiness.</h2>
+
+    <div class="learning-grid">
+      <div class="learning-card">
+        <span>01</span>
+        <h3>Healthcare Affordability</h3>
+        <p>Understanding how rising medical costs affect household budgets, delayed care, and financial decisions.</p>
+      </div>
+
+      <div class="learning-card">
+        <span>02</span>
+        <h3>Access to Care</h3>
+        <p>Learning how quickly families can reach a physician when care is needed, including after hours.</p>
+      </div>
+
+      <div class="learning-card">
+        <span>03</span>
+        <h3>Prescription Costs</h3>
+        <p>Identifying whether medication expenses are causing families to skip, delay, or seek cheaper options.</p>
+      </div>
+
+      <div class="learning-card">
+        <span>04</span>
+        <h3>Employer Benefits</h3>
+        <p>Helping families understand current benefits, including whether an Employee Assistance Program is available.</p>
+      </div>
+
+      <div class="learning-card">
+        <span>05</span>
+        <h3>Mental Wellness</h3>
+        <p>Measuring awareness of counseling and emotional wellness resources before a crisis occurs.</p>
+      </div>
+
+      <div class="learning-card">
+        <span>06</span>
+        <h3>Family Priorities</h3>
+        <p>Discovering which healthcare resources families value most: convenience, affordability, prescriptions, or access.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section appreciation">
+  <div class="section-inner">
+    <p class="eyebrow">Our Appreciation</p>
+    <h2>Thank you for taking time to participate.</h2>
+    <p>As our appreciation for completing the survey, qualified participants will receive:</p>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <h3>$50 Dining Voucher</h3>
+        <p>A complimentary dining voucher from participating restaurant partners.</p>
+      </div>
+
+      <div class="value-card">
+        <h3>Vacation Giveaway Entry</h3>
+        <p>One entry into the 3 Night / 4 Day Vacation Getaway Giveaway.</p>
+      </div>
+
+      <div class="value-card">
+        <h3>Healthcare Readiness Summary</h3>
+        <p>A personalized summary based on your survey responses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section start-section">
+  <div class="section-inner centered">
+    <p class="eyebrow">Ready to Participate?</p>
+    <h2>The survey takes approximately three minutes.</h2>
+    <button class="primary-btn" id="startSurvey">Begin the 2026 Survey</button>
+    <p class="small-note">No purchase required. Voucher and giveaway participation subject to eligibility and official rules.</p>
+  </div>
+</section>
+
+<section class="survey-section" id="surveySection">
+  <div class="survey-card">
+    <div class="progress-text" id="progressText">Question 1 of 12</div>
+    <div class="progress-bar"><div id="progressFill"></div></div>
+    <h2 id="questionTitle"></h2>
+    <div id="answerOptions" class="answer-options"></div>
+
+    <div class="survey-actions">
+      <button id="backBtn" class="secondary-btn">Back</button>
+      <button id="nextBtn" class="primary-btn">Next</button>
+    </div>
+  </div>
+</section>
+
+<section class="lead-section" id="leadSection">
+  <div class="lead-card">
+    <p class="eyebrow">Final Step</p>
+    <h2>Where should we send your summary and voucher?</h2>
+    <p>Complete your information below to receive your Healthcare Readiness Summary, $50 dining voucher, and giveaway entry.</p>
+
+    <form id="leadForm">
+      <input type="text" name="firstName" placeholder="First Name" required />
+      <input type="text" name="lastName" placeholder="Last Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="text" name="zip" placeholder="Zip Code" required />
+      <button type="submit" class="primary-btn">Get My Summary & Voucher</button>
+    </form>
+  </div>
+</section>
+
+<section class="thankyou-section" id="thankyouSection">
+  <div class="thankyou-card">
+    <p class="eyebrow">Survey Submitted</p>
+    <h2>Thank you for helping improve healthcare awareness across America.</h2>
+
+    <div class="next-steps">
+     <p>Your responses have been received and will help us better understand the healthcare concerns facing families.</p>
+      <p>Your $50 dining voucher will be sent to the contact information provided.</p>
+      <p>You have been entered into the 3 Night / 4 Day Vacation Getaway Giveaway.</p>
+    </div>
+
+  <a href="https://b.12stoneboost.com/widget/booking/b34LtANWuxqJtjdPlRdA" class="primary-btn link-btn" target="_blank">
+  Schedule My Healthcare Review
+</a>
+  </div>
+</section>
+
+<footer>
+  <p>Powered by 12 Stone Smart Websites</p>
+</footer>
+
+<script src="js/family-healthcare-readiness.js"></script>
+</body>
+</html>
