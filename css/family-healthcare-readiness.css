@@ -581,3 +581,33 @@ footer{
     display:block;
     border-radius:8px;
 }
+
+@media(max-width:600px){
+  .learning-grid{
+    gap:16px;
+    margin-top:28px;
+  }
+
+  .learning-card{
+    padding:20px;
+    min-height:auto;
+    border-radius:20px;
+  }
+
+  .learning-card span{
+    width:34px;
+    height:34px;
+    font-size:.78rem;
+    margin-bottom:14px;
+  }
+
+  .learning-card h3{
+    font-size:1.08rem;
+    margin-bottom:8px;
+  }
+
+  .learning-card p{
+    font-size:.88rem;
+    line-height:1.45;
+  }
+}
