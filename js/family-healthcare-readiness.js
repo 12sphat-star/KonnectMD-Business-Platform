@@ -67,13 +67,15 @@ const nextBtn = document.getElementById("nextBtn");
 const backBtn = document.getElementById("backBtn");
 const leadForm = document.getElementById("leadForm");
 
-startSurveyBtn.addEventListener("click", () => {
-  surveySection.style.display = "block";
-  loadQuestion();
+document.querySelectorAll(".start-survey-trigger").forEach(button => {
+  button.addEventListener("click", () => {
+    surveySection.style.display = "block";
+    loadQuestion();
 
-  window.scrollTo({
-    top: surveySection.offsetTop - 40,
-    behavior: "smooth"
+    window.scrollTo({
+      top: surveySection.offsetTop - 40,
+      behavior: "smooth"
+    });
   });
 });
 
