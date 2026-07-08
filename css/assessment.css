@@ -371,3 +371,67 @@ input{
     }
 
 }
+/* Executive cleanup overrides */
+
+img[src*="gift"],
+.icon,
+.card-icon,
+.benefit-icon,
+.challenge-icon {
+  display: none !important;
+}
+
+button,
+.btn,
+.cta-button,
+.primary-btn,
+a[class*="btn"] {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  border: none !important;
+  box-shadow: 0 14px 30px rgba(220, 38, 38, 0.25) !important;
+}
+
+.card,
+.challenge-card,
+.benefit-card,
+.feature-card,
+.industry-card {
+  border: 1px solid rgba(37, 99, 235, 0.18) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10) !important;
+}
+
+.card h3,
+.challenge-card h3,
+.benefit-card h3,
+.feature-card h3 {
+  color: #071426 !important;
+}
+
+.card p,
+.challenge-card p,
+.benefit-card p,
+.feature-card p {
+  color: #334155 !important;
+}
+
+.badge,
+.pill,
+.tag {
+  background: #dbeafe !important;
+  color: #1e40af !important;
+  border: 1px solid #93c5fd !important;
+}
+
+.hero-card,
+.value-card {
+  border-color: rgba(37, 99, 235, 0.22) !important;
+}
+
+.hero-card::before,
+.challenge-card::before,
+.benefit-card::before {
+  color: #2563eb !important;
+  font-weight: 900;
+}
